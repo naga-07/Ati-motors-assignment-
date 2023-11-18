@@ -1,0 +1,68 @@
+##################################################################################################### 
+Created a data model 
+CREATE TABLE resources (
+    resource_id SERIAL PRIMARY KEY,
+    resource_name VARCHAR(255) NOT NULL,
+    category VARCHAR(10) CHECK (category IN ('shared', 'exclusive')) NOT NULL,
+    linked_resources INTEGER[] DEFAULT '{}'::INTEGER[]
+);
+
+
+######################################################################################################
+ 
+Inserted the attribute values
+INSERT INTO public.resources (resource_name, category, linked_resources)
+VALUES 
+
+  ('Resource3', 'shared', '{4}'),
+  ('Resource4', 'exclusive', NULL),
+  ('Resource5', 'shared', '{6, 7}'),
+  ('Resource6', 'exclusive', NULL),
+  ('Resource7', 'shared', '{8, 9}'),
+  ('Resource8', 'exclusive', NULL),
+  ('Resource9', 'shared', '{10}'),
+  ('Resource10', 'exclusive', NULL),
+  ('Resource11', 'shared', '{12, 13}'),
+  ('Resource12', 'exclusive', NULL),
+  ('Resource13', 'shared', '{14}'),
+  ('Resource14', 'exclusive', NULL),
+  ('Resource15', 'shared', '{16, 17}'),
+  ('Resource16', 'exclusive', NULL),
+  ('Resource17', 'shared', '{18}'),
+  ('Resource18', 'exclusive', NULL),
+  ('Resource19', 'shared', '{20}'),
+  ('Resource20', 'exclusive', NULL),
+  ('Resource21', 'shared', '{22, 23}'),
+  ('Resource22', 'exclusive', NULL),
+  ('Resource23', 'shared', '{24}'),
+  ('Resource24', 'exclusive', NULL),
+  ('Resource25', 'shared', '{26, 27}'),
+  ('Resource26', 'exclusive', NULL),
+  ('Resource27', 'shared', '{28}'),
+  ('Resource28', 'exclusive', NULL),
+  ('Resource29', 'shared', '{30}'),
+  ('Resource30', 'exclusive', NULL),
+  ('Resource31', 'shared', '{32, 33}'),
+  ('Resource32', 'exclusive', NULL),
+  ('Resource33', 'shared', '{34}'),
+  ('Resource34', 'exclusive', NULL),
+  ('Resource35', 'shared', '{36, 37}'),
+  ('Resource36', 'exclusive', NULL),
+  ('Resource37', 'shared', '{38}'),
+  ('Resource38', 'exclusive', NULL),
+  ('Resource39', 'shared', '{40}'),
+  ('Resource40', 'exclusive', NULL),
+  ('Resource41', 'shared', '{42, 43}'),
+  ('Resource42', 'exclusive', NULL),
+  ('Resource43', 'shared', '{44}'),
+  ('Resource44', 'exclusive', NULL),
+  ('Resource45', 'shared', '{46, 47}'),
+  ('Resource46', 'exclusive', NULL),
+  ('Resource47', 'shared', '{48}'),
+  ('Resource48', 'exclusive', NULL),
+  ('Resource49', 'shared', '{50}'),
+  ('Resource50', 'exclusive', NULL);
+
+######################################################################################################
+
+SELECT * FROM resources
